@@ -37,9 +37,9 @@ services:
         # - Nginx Server block
       - ./sites/pablo.camara.pt/site.conf:/etc/nginx/sites-available/pablo.camara.pt.conf
         # - Current Cloudflare certificates
-      #- ./sites/pablo.camara.pt/certificates/:/etc/nginx/sites/pablo.camara.pt/certificates
+      - ./sites/pablo.camara.pt/certificates/:/etc/nginx/sites/pablo.camara.pt/certificates
         # - Copy Public Folder:
-      #- ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
+      - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
 
 
     ports:
