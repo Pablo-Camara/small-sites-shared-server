@@ -48,3 +48,13 @@ services:
     depends_on:
       - php-fpm
     restart: always
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      container_name: pc_phpmyadmin
+      environment:
+        PMA_HOST: mysql
+        PMA_PORT: 3306
+      ports:
+          - 9999:80
+      links:
+          - mysql
