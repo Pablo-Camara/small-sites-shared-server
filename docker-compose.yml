@@ -9,6 +9,9 @@ services:
 
         # pablo.camara.pt:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
+
+        # boasprendas.com:
+      - ./sites/boasprendas.com/root/public/:/var/www/boasprendas.com/public
     depends_on:
       - mysql
   mysql:
@@ -41,6 +44,14 @@ services:
         # - Copy Public Folder:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
 
+
+        # boasprendas.com:
+      # - Nginx Server block
+      - ./sites/boasprendas.com/site.conf:/etc/nginx/sites-available/boasprendas.com.conf
+      # - Current Cloudflare certificates
+      - ./sites/boasprendas.com/certificates/:/etc/nginx/sites/boasprendas.com/certificates
+      # - Copy Public Folder:
+      - ./sites/boasprendas.com/root/public/:/var/www/boasprendas.com/public
 
     ports:
       - "80:80"
