@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\docker",
+    "\\docker\\nginx",
+    "\\docker\\php-fpm",
+    "\\sites",
+    "\\sites\\pablo.camara.pt",
+    "\\sites\\pablo.camara.pt\\certificates",
+    "\\sites\\pablo.camara.pt\\root",
+    "\\sites\\pablo.camara.pt\\root\\public"
+  ],
+  "SelectedNode": "\\docker-compose.yml",
+  "PreviewInSolutionExplorer": false
+}
