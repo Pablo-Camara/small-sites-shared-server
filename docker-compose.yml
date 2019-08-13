@@ -10,8 +10,8 @@ services:
         # pablo.camara.pt:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
 
-        # boasprendas.com:
-      - ./sites/boasprendas.com/root/public/:/var/www/boasprendas.com/public
+        # marciacabeleireiro.com:
+      - ./sites/marciacabeleireiro.com/root/public/:/var/www/marciacabeleireiro.com/public
     depends_on:
       - mysql
   mysql:
@@ -45,13 +45,13 @@ services:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
 
 
-        # boasprendas.com:
+        # marciacabeleireiro.com:
       # - Nginx Server block
-      - ./sites/boasprendas.com/site.conf:/etc/nginx/sites-available/boasprendas.com.conf
+      - ./sites/marciacabeleireiro.com/site.conf:/etc/nginx/sites-available/marciacabeleireiro.com.conf
       # - Current Cloudflare certificates
-      - ./sites/boasprendas.com/certificates/:/etc/nginx/sites/boasprendas.com/certificates
+      - ./sites/marciacabeleireiro.com/certificates/:/etc/nginx/sites/marciacabeleireiro.com/certificates
       # - Copy Public Folder:
-      - ./sites/boasprendas.com/root/public/:/var/www/boasprendas.com/public
+      - ./sites/marciacabeleireiro.com/root/public/:/var/www/marciacabeleireiro.com/public
 
     ports:
       - "80:80"
