@@ -1,7 +1,7 @@
 FROM php:fpm-alpine
 RUN docker-php-ext-install pdo pdo_mysql
 
-RUN apk add --no-cache libpng libpng-dev libjpeg-turbo-dev
+RUN apk add --no-cache libpng libpng-dev libjpeg-turbo libjpeg-turbo-dev
 RUN docker-php-ext-install gd
 RUN apk del libpng-dev libjpeg-turbo-dev
 
