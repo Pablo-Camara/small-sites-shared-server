@@ -6,12 +6,8 @@ services:
       context: ./docker/php-fpm
     volumes:
         # Mount PHP for each domain's public folder:
-
         # pablo.camara.pt:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
-
-        # marciacabeleireiro.com:
-      - ./sites/marciacabeleireiro.com/root/public/:/var/www/marciacabeleireiro.com/public
     depends_on:
       - mysql
   mysql:
@@ -43,15 +39,6 @@ services:
       - ./sites/pablo.camara.pt/certificates/:/etc/nginx/sites/pablo.camara.pt/certificates
         # - Copy Public Folder:
       - ./sites/pablo.camara.pt/root/public/:/var/www/pablo.camara.pt/public
-
-
-        # marciacabeleireiro.com:
-      # - Nginx Server block
-      - ./sites/marciacabeleireiro.com/site.conf:/etc/nginx/sites-available/marciacabeleireiro.com.conf
-      # - Current Cloudflare certificates
-      - ./sites/marciacabeleireiro.com/certificates/:/etc/nginx/sites/marciacabeleireiro.com/certificates
-      # - Copy Public Folder:
-      - ./sites/marciacabeleireiro.com/root/public/:/var/www/marciacabeleireiro.com/public
 
     ports:
       - "80:80"
